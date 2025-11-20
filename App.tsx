@@ -29,9 +29,24 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="bg-slate-100 py-6 mt-12 border-t border-slate-200">
-        <div className="container mx-auto px-4 text-center text-slate-500 text-sm">
-          <p>© 2024 لعبة الآلات البسيطة التعليمية. تم التصميم باستخدام Google Gemini.</p>
+      <footer className="bg-slate-100 py-8 mt-12 border-t border-slate-200">
+        <div className="container mx-auto px-4 text-center flex flex-col items-center gap-4">
+          <p className="text-indigo-900 font-bold text-lg">مشروع الشغل والآلات البسيطة</p>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-slate-600 text-sm">
+            <div className="flex items-center gap-2">
+              <span>إعداد الطالب:</span>
+              <span className="font-bold text-slate-800">آدم عبدالله</span>
+              <span className="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded text-xs font-bold">التاسع أ</span>
+            </div>
+            
+            <div className="hidden md:block w-1 h-1 rounded-full bg-slate-300"></div>
+            
+            <div className="flex items-center gap-2">
+              <span>بإشراف المعلم:</span>
+              <span className="font-bold text-slate-800">عبدالله السويطي</span>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

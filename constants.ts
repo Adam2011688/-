@@ -1,6 +1,16 @@
 import { MachineType, MachineInfo } from './types';
 
 export const MACHINES: Record<MachineType, MachineInfo> = {
+  [MachineType.WORK]: {
+    id: MachineType.WORK,
+    name: "الشغل الميكانيكي",
+    scientificName: "Mechanical Work",
+    description: "كمية فيزيائية تعبر عن الطاقة المبذولة لتحريك جسم ما مسافة معينة في اتجاه القوة.",
+    physicsConcept: "الشغل = القوة × الإزاحة (W = F × d). يقاس بالجول (Joule). يكون الشغل صفراً إذا لم يتحرك الجسم أو كانت القوة عمودية على الحركة.",
+    example: "دفع صندوق، رفع الأثقال، سحب عربة",
+    imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800",
+    color: "bg-pink-50 text-pink-800 border-pink-200"
+  },
   [MachineType.LEVER]: {
     id: MachineType.LEVER,
     name: "الرافعة",
@@ -64,6 +74,11 @@ export const MACHINES: Record<MachineType, MachineInfo> = {
 };
 
 export const FALLBACK_SCENARIOS: any[] = [
+  {
+    scenario: "رجل يدفع جداراً إسمنتياً ضخماً بقوة كبيرة جداً لمدة ساعة ولكنه لم يستطع تحريكه من مكانه.",
+    correctMachine: MachineType.WORK,
+    explanation: "الشغل الميكانيكي في هذه الحالة يساوي صفراً، لأنه بالرغم من وجود قوة وتعب، إلا أنه لم تحدث إزاحة للجدار (المسافة = 0)."
+  },
   {
     scenario: "في موقع بناء، يريد المهندس رفع كتلة خرسانية ثقيلة جداً إلى الطابق الثاني بأقل قوة ممكنة باستخدام حبل وعجلات معلقة.",
     correctMachine: MachineType.PULLEY,

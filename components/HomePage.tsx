@@ -18,16 +18,34 @@ export const HomePage: React.FC<HomePageProps> = ({ onStartGame, onStartLearn })
             الفيزياء للصف التاسع
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+        <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
           مختبر
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600 mx-3">
-            الآلات البسيطة
+             الشغل والآلات البسيطة
           </span>
           الافتراضي
         </h1>
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
-          منصة تعليمية تفاعلية مدعومة بالذكاء الاصطناعي. اكتشف كيف تُغير الآلات حياتنا من خلال الصور الواقعية والمسائل الفيزيائية الممتعة.
+        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium mb-8">
+          منصة تعليمية تفاعلية مدعومة بالذكاء الاصطناعي. تعلم مفاهيم الشغل الميكانيكي، القوة، الإزاحة، وكيف تسهل الآلات حياتنا.
         </p>
+
+        {/* Student & Teacher Badge */}
+        <div className="inline-flex flex-col items-center animate-float">
+            <div className="bg-white/90 backdrop-blur-sm px-8 py-5 rounded-2xl shadow-lg border border-indigo-100 flex flex-col items-center gap-3">
+                <div className="flex flex-col md:flex-row items-center gap-3">
+                    <span className="text-slate-500 font-medium">إعداد الطالب:</span>
+                    <span className="text-indigo-700 font-black text-xl">آدم عبدالله</span>
+                    <span className="bg-indigo-50 text-indigo-800 px-3 py-1 rounded-lg text-sm font-bold border border-indigo-100">
+                        الصف التاسع أ
+                    </span>
+                </div>
+                <div className="w-3/4 h-px bg-slate-100"></div>
+                <div className="flex items-center gap-2">
+                    <span className="text-slate-500 font-medium text-sm">بإشراف المعلم الفاضل:</span>
+                    <span className="text-slate-800 font-bold text-lg">عبدالله السويطي</span>
+                </div>
+            </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
@@ -45,7 +63,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onStartGame, onStartLearn })
           </div>
           <div className="relative z-10">
              <h2 className="text-2xl font-bold text-slate-900 mb-2">الموسوعة العلمية</h2>
-             <p className="text-slate-500 font-medium">استعرض صوراً حقيقية للآلات وافهم مبدأ عملها الفيزيائي وقانون العزم.</p>
+             <p className="text-slate-500 font-medium">استكشف مفهوم الشغل، الطاقة، والآلات البسيطة مع صور وشروحات فيزيائية دقيقة.</p>
           </div>
         </button>
 
@@ -68,7 +86,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onStartGame, onStartLearn })
           
           <div className="relative z-10">
             <h2 className="text-2xl font-bold mb-2 text-white">تحدي الفيزياء</h2>
-            <p className="text-indigo-100 font-medium opacity-90">حل ألغاز ومسائل واقعية. هل يمكنك اختيار الآلة الصحيحة لكل مهمة؟</p>
+            <p className="text-indigo-100 font-medium opacity-90">مسائل في حساب الشغل، الفائدة الآلية، واختيار الآلة المناسبة.</p>
           </div>
         </button>
       </div>

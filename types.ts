@@ -1,4 +1,5 @@
 export enum MachineType {
+  WORK = 'WORK', // Added Work concept
   LEVER = 'LEVER',
   WHEEL_AXLE = 'WHEEL_AXLE',
   PULLEY = 'PULLEY',

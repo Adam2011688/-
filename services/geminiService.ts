@@ -8,17 +8,20 @@ export const generateScenario = async (): Promise<GameScenario> => {
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `Generate a challenging Physics scenario/problem in ARABIC suitable for 9th Grade students involving one of the six simple machines.
+      contents: `Generate a challenging Physics scenario/problem in ARABIC suitable for 9th Grade students involving either one of the six simple machines OR the concept of Mechanical Work (الشغل).
       
-      The scenario should act like a physics quiz question:
-      - Focus on specific concepts: Mechanical Advantage (الفائدة الآلية), Force (القوة), Resistance/Load (المقاومة), and Work (الشغل).
+      The scenario should act like a physics quiz question covering the curriculum requirements:
+      - Concepts to cover: Work (الشغل), Force (القوة), Displacement (الإزاحة), Power (القدرة), Mechanical Advantage (الفائدة الآلية), and Levers/Pulleys/etc.
       - Use real-world engineering, construction, or daily life mechanics context.
-      - Do NOT explicitly name the machine in the scenario text. Describe the mechanism or the forces involved.
+      
+      Important Rules:
+      1. If the scenario is about calculating Work (W=F*d) or identifying if work is done (e.g. force perpendicular to motion, or no motion), the 'correctMachine' should be 'WORK'.
+      2. If it involves a machine, describe the mechanism without explicitly naming the machine.
       
       Return JSON with:
       - scenario: The Arabic text describing the physics problem.
-      - correctMachine: The enum value of the machine used.
-      - explanation: A scientific Arabic explanation explaining why it is that machine and mentioning the physics concept involved.
+      - correctMachine: The enum value (WORK, LEVER, PULLEY, etc.).
+      - explanation: A scientific Arabic explanation explaining the answer (mentioning Work formula if applicable, or the machine type).
       - difficulty: EASY, MEDIUM, or HARD.
       `,
       config: {
@@ -30,6 +33,7 @@ export const generateScenario = async (): Promise<GameScenario> => {
             correctMachine: { 
               type: Type.STRING, 
               enum: [
+                'WORK',
                 'LEVER',
                 'WHEEL_AXLE',
                 'PULLEY',

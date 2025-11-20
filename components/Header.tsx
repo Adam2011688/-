@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = ({ onHome }) => {
           <div className="bg-white/20 p-2 rounded-full">
             <Wrench className="w-6 h-6 text-white" />
           </div>
-          <h1 className="text-2xl font-bold">عالم الآلات البسيطة</h1>
+          <h1 className="text-2xl font-bold">الشغل والآلات البسيطة</h1>
         </div>
         <nav className="hidden sm:flex gap-4 text-sm font-medium">
           <button onClick={onHome} className="hover:text-indigo-200">الرئيسية</button>
